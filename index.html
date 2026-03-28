@@ -294,7 +294,7 @@
         <p class="head__row__text">Yopiq taqdimotga qo’shiling</p>
 
         <img class="head__row__image" loading="lazy" decoding="async"
-         width="350" src="./images/city.avif" alt="">
+         width="350" src="./images/city.avif" alt="city image">
 
         <button class="head__row__btn">Bepul qatnashish</button>
 
@@ -336,36 +336,10 @@
     </div>
 
 
-    <script>
-    let timeLeft = 118; // 1 daqiqa 58 soniya = 118 sekund
-
-    const timerElement = document.getElementById('timer');
-
-    function updateTimer() {
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-
-      // Format: 01:58
-      timerElement.textContent = 
-        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-      if (timeLeft <= 0) {
-        // 0 ga yetganda yana 2 minutdan boshlash
-        timeLeft = 120; // 2 daqiqa = 120 sekund
-      } else {
-        timeLeft--;
-      }
-    }
-
-    // Har 1 soniyada yangilash
-    setInterval(updateTimer, 1000);
-
-    // Dastlab bir marta chaqirish
-    updateTimer();
-  </script>
 
 
-  <script src="./js/app.js"></script>
+  <script defer src="./js/app.js"></script>
+  <script defer src="./js/time.js"></script>
 </body>
 
 </html>
