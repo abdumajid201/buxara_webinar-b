@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buxara Webinar</title>
+    <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+    <noscript>
+        <link rel="stylesheet" href="./css/main.css" />
+    </noscript>
+
+</head>
+
+<body>
+
+    <main class="head">
+        <div class="head__row">
+            <h2 class="head__row__title">Anor Residence</h2>
+            <div class="head__main">
+                <p class="head__main__text"><img class="head__main__image" width="14" src="./images/calendar.png"
+                        loading="lazy" decoding="async" alt="calendar">27-Mart</p>
+                <p class="head__main__text"><img class="head__main__image" width="13" src="./images/time.png"
+                        loading="lazy" decoding="async" alt="time">10:00 AM</p>
+            </div>
+        </div>
+        <h2 class="head__title">DubaY va Toshkent <br> qurilish standartlari <br>
+            — endi Buxoroda</h2>
+        <p class="head__row__text">Yopiq taqdimotga qo’shiling</p>
+
+        <img class="head__row__image" loading="lazy" decoding="async"
+         width="350" src="./images/city.png" alt="">
+
+        <button class="head__row__btn">Bepul qatnashish</button>
+
+        <h3 class="head__col__title" id="timer">01:58</h3>
+
+        <h3 class="food__title">Sizni kutmoqda:</h3>
+
+        <div class="foot__row">
+            <div class="foot__col">
+                <img class="foot__col__image" src="./images/Mask group.png" alt="houses">
+                <p class="foot__col__text">Loyihaning to‘liq taqdimoti render, <span class="foot__col__span">reja va infratuzilma</span></p>
+            </div>
+
+             <div class="foot__col">
+                <img class="foot__col__image" src="./images/money.png" alt="houses">
+                <p class="foot__col__text">Narxlar, <span class="foot__col__span">bo‘lib to‘lash</span> va <span class="foot__col__span">boshlang‘ich to‘lov</span> shartlari</span></p>
+            </div>
+
+             <div class="foot__col">
+                <img class="foot__col__image" src="./images/technology.png" alt="houses">
+                <p class="foot__col__text">Birinchi xaridorlarimizga <span class="foot__col__span">maishiy texnika to’plamlarini sovg’a qilamiz</span></span></p>
+            </div>
+        </div>
+
+        <button class="head__row__btn foot__btn">Bepul qatnashish</button>
+
+    </main>
+
+      <div class="modal" id="modal">
+        <div class="modal__content">
+            <button class="modal__close" id="closeModal" type="button">✕</button>
+            <h2 class="modal__title">Ro'yxatdan o'tish</h2>
+            <form action="" id="modalForm">
+                <input type="text" id="nameInput" placeholder="Ismingizni kiriting" class="modal__input" required>
+                <input type="text" id="phoneInput" placeholder="+998 (__) ___-__-__" class="modal__input" required>
+                <button class="modal__submit" type="submit">Yuborish</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+    let timeLeft = 118; // 1 daqiqa 58 soniya = 118 sekund
+
+    const timerElement = document.getElementById('timer');
+
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+
+      // Format: 01:58
+      timerElement.textContent = 
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      if (timeLeft <= 0) {
+        // 0 ga yetganda yana 2 minutdan boshlash
+        timeLeft = 120; // 2 daqiqa = 120 sekund
+      } else {
+        timeLeft--;
+      }
+    }
+
+    // Har 1 soniyada yangilash
+    setInterval(updateTimer, 1000);
+
+    // Dastlab bir marta chaqirish
+    updateTimer();
+  </script>
+
+
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
