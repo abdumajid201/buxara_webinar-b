@@ -346,7 +346,7 @@
 
 
     <script>
-        let timeLeft = 118; // 1 daqiqa 58 soniya = 118 sekund
+        let timeLeft = 118; 
 
         const timerElement = document.getElementById('timer');
 
@@ -359,17 +359,14 @@
                 `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
             if (timeLeft <= 0) {
-                // 0 ga yetganda yana 2 minutdan boshlash
-                timeLeft = 120; // 2 daqiqa = 120 sekund
+                timeLeft = 120; 
             } else {
                 timeLeft--;
             }
         }
 
-        // Har 1 soniyada yangilash
         setInterval(updateTimer, 1000);
 
-        // Dastlab bir marta chaqirish
         updateTimer();
     </script>
 
